@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "month",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": "1",
+            "fieldValidateRulesMax": "12"
+        }
+    ],
+    "changelogDate": "20161202202410",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "rev_cycle",
+    "pagination": "no",
+    "microserviceName": "revrecapp",
+    "searchEngine": false
+}

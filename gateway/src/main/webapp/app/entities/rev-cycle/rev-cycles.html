@@ -1,0 +1,57 @@
+<div>
+    <h2>Accounting Cycle</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left" ng-hide="vm.revCycles.length>0">
+                <button class="btn btn-primary" ui-sref="rev-cycle.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span>
+                        Create new Accounting Cycle
+                    </span>
+                </button>                
+            </div>
+        </div>
+    </div>
+    <br/>
+
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <!--<th><span>ID</span></th>-->
+                    <th><span>Last Month of Accounting Cycle</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="revCycle in vm.revCycles track by revCycle.id">
+                    <!--<td><a ui-sref="rev-cycle-detail({id:revCycle.id})">{{revCycle.id}}</a></td>-->
+                    <td>{{revCycle.month | getMonthFromNumberFilter}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <!--<button type="submit"
+                                    ui-sref="rev-cycle-detail({id:revCycle.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>-->
+                            <button type="submit"
+                                    ui-sref="rev-cycle.edit({id:revCycle.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="rev-cycle.delete({id:revCycle.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
